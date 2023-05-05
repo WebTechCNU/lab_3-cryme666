@@ -1,6 +1,9 @@
+html { overflow-y: scroll; }
+
 body {
     font-family: 'Noto Serif JP', serif;
     /* overflow: hidden; */
+    
 }
 
 
