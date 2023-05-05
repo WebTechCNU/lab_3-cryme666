@@ -1,0 +1,406 @@
+body {
+    font-family: 'Noto Serif JP', serif;
+    /* overflow: hidden; */
+}
+
+
+.mikro-img {
+    width: 200px;
+    height: 50px;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-right: 100px;
+
+}
+
+.menu_text {
+    margin-top: 10px;
+
+}
+
+
+.main-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Serif JP', serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+
+}
+
+#bag
+{
+    height: 45px;
+    transition: all 0.3s ease;
+}
+
+
+.main-menu>li {
+    display: inline-flex;
+}
+
+.main-menu>li+li {
+    margin-left: 100px;
+}
+
+.main-menu>li>a {
+    padding: 0 0 10px 0;
+    position: relative;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-weight: bold;
+    letter-spacing: 0.2px;
+    font-size: 15px;
+    text-decoration: none;
+    
+}
+
+.main-menu>li>a:hover {
+    text-decoration: none;
+    color: #d88912;
+}
+
+.main-menu>li>a:after {
+    width: 0;
+    height: 3px;
+    background-color: #d88912;
+    content: '';
+    left: 0;
+    bottom: 10px;
+    position: absolute;
+    transition: all .8s;
+}
+
+.main-menu>li>a:hover::after {
+    width: 100%;
+}
+
+.main-menu>li.active a:after {
+    width: 100%;
+
+}
+
+.main-menu li {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.main-menu li.menu-children {
+    position: relative;
+}
+
+.main-menu li.menu-children:after {
+    position: absolute;
+    content: "\2039";
+    color: #d88912;
+    font-size: 20px;
+    font-weight: bold;
+    right: -12px;
+    top: -2px;
+    transform: rotate(-90deg);
+    margin-top: 10px;
+}
+
+.main-menu li li.menu-children:after {
+    position: absolute;
+    content: "\2039";
+    color: #FFF;
+    font-size: 20px;
+    font-weight: bold;
+    right: 10px;
+    top: 12px;
+    transform: rotate(180deg);
+}
+
+.main-menu li.menu-children:hover>ul {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.main-menu ul {
+    padding: 10px 0;
+    margin: 0;
+    list-style: none;
+    background-color: #d88912;
+    position: absolute;
+    z-index: 20;
+    min-width: 220px;
+    top: 100%;
+    left: -30px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(5px);
+    transition: all 200ms cubic-bezier(0.43, 0.59, 0.16, 1.25);
+}
+
+.main-menu ul li {
+    display: block;
+    padding: 0 10px;
+    line-height: 1.1;
+}
+
+.main-menu ul li:last-child {
+    margin-bottom: 0;
+}
+
+.main-menu ul li a {
+    display: block;
+    color: #fff;
+    padding: 10px;
+    transition: all .3s;
+    text-decoration: none;
+}
+
+.main-menu ul li a:hover {
+    color: #d88912;
+    background: #FFF;
+    text-decoration: none;
+}
+
+.main-menu ul ul {
+    top: 0;
+    left: 100%;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.image-gallery img {
+    max-width: 100%;
+    max-height: 100%;
+    margin: 10px;
+}
+
+.image-gallery .image-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.image-gallery .image-card .image-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: rgba(217, 137, 18, 0.5);
+    color: #fff;
+    text-align: center;
+    font-family: 'Noto Serif JP', serif;
+    transform: translateY(100%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.image-gallery .image-card:hover .image-description {
+    transform: translateY(0%);
+}
+
+button {
+    background-color: rgb(217, 137, 18);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+
+
+}
+
+button:hover {
+    background-color: #06b300;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 10);
+    transform: translateY(-2px);
+}
+
+button:active {
+    animation: button-active 0.2s ease;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.load-buttons{
+ margin-left: 45%;
+ margin-top: 100px;
+
+
+}
+
+#popup {
+    display: none; 
+
+    position: fixed;
+    top: 20%;
+    transform: translateY(20%);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    z-index: 2;
+    text-align: center;
+}
+
+#popup p {
+    font-size: 24px;
+    color: #fff;
+    margin-top: 20%;
+}
+
+#popup button {
+    font-size: 20px;
+
+    margin-top: 20px;
+    margin-left: 40%;
+}
+
+.adv {
+    display: none;
+    width: 400px;
+    height: 300px;
+    position: fixed;
+    top: 77%;
+    left: 85%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    z-index: 3;
+    
+}
+
+.adv p
+{
+    font-size: 15px;
+    position: fixed;
+    left: 32%;
+    top: 30px;
+   
+}
+
+.adv button
+{
+    
+    display: none;
+    justify-content: center;
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.adv img{
+    position: fixed;
+    width: 200px;
+    top: 80px;
+    margin-left: 110px;
+    
+}
+
+.test
+{
+    color: black;
+}
+
+#sortSelect
+{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: -100px;
+    border-radius: 20px;
+}
+
+.default
+{
+    display: none;
+}
+
+#basket-total
+{
+    display: flex;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+
+#clear
+{
+    font-size: 14px;
+    color: white;
+    margin-left: 10px;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0);
+    transition: all 0.3s ease;
+
+}
+#clear:hover{
+        color: red;
+        background-color: rgba(0, 0, 0, 0);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0);
+        transform: translateY(0px);
+    
+
+}
+
+.bobik
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+}
+
+.zagolovok
+{
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.date
+{
+    text-align: center;
+    font-size: 15px;
+    margin-top: -20px;
+    margin-bottom: 0;
+
+}
+
+.news-text>p{
+    text-align: justify;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
