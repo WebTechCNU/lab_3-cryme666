@@ -63,7 +63,7 @@ const images = [
   ];
   
 
-  let arrayCard = images.map(elem => {return {image: elem, amount: 0}});
+  let arrayCard = images.map(elem => {return {description: elem.description, amount: 0}});
   
   function renderImages(images) {
     imageGallery.innerHTML = "";
@@ -91,7 +91,7 @@ const images = [
         const currentTotal = parseInt(basketTotal.textContent);
         basketTotal.textContent = currentTotal + price + " UAN";
 
-
+        displayCart();
         arrayCard[i].amount ++;
       
       });
@@ -105,17 +105,6 @@ const images = [
   
   renderImages(images);  
 
-  function handleSortChange() {
-    const select = document.getElementById("sortSelect");
-    const selectedValue = select.value;
-    if (selectedValue === "name")  sortByName(); 
-    if (selectedValue === "price") sortByPrice();
-    
-  }
-  
-  sortByNameBtn.addEventListener("click", sortByName);
-  sortByPriceBtn.addEventListener("click", sortByPrice);
-  
 function sortByName() {
     images.sort((a, b) => a.description.localeCompare(b.description));
     renderImages(images);
@@ -125,25 +114,38 @@ function sortByName() {
     images.sort((a, b) => a.price - b.price);
     renderImages(images);
   }
+
+  function handleSortChange() {
+    const select = document.getElementById("sortSelect");
+    const selectedValue = select.value;
+    if (selectedValue === "name")  sortByName(); 
+    if (selectedValue === "price") sortByPrice();
+    
+  }
+  
+  // sortByNameBtn.addEventListener("click", sortByName);
+  // sortByPriceBtn.addEventListener("click", sortByPrice);
   
 
+  
+function displayCart(){
 
-  // доробити??????
   new Chart("myChart", {
     type: "pie",
     data: {
-        labels: xValues,
+        labels: arrayCard.map(x => x.description),
         datasets: [{
             backgroundColor: barColors,
-            data: yValues
+            data: arrayCard.map(x => x.amount)
         }]
     },
     options: {
         title: {
             display: true,
-            text: "World Wide Wine Production"
+            text: "Cart"
         }
     }
 });
+}
 
 
