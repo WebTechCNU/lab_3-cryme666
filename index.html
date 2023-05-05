@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Burn Energy</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body style="overflow: hidden;">
+    
+    <ul class="main-menu">
+        <img class="mikro-img" src="burn_logo.png" alt="Вибачте, пропив лого">
+        
+        <li class = "active"><a href="#url" class = "menu_text" class = "text_main">Main</a></li>
+        <li class="menu-children">
+
+            <a href="#url" class = "menu_text" >Service</a>
+            <ul>
+                <li><a href="#url ">Purchase</a></li>
+                <li><a href="#url">Something...</a></li>        
+            </ul>
+        </li>
+        <li><a href="news.html" class = "menu_text">News</a></li>
+        <li><a href="#url" class = "menu_text">Photogalery</a></li>  
+        <li class="menu-children" class = "menu_text">
+            <a href="#url" class = "menu_text">Contacts</a>
+            <ul>
+                <li><a href="#url">Request</a></li>
+                <li><a href="#url">About us</a></li>        
+            </ul>   
+        <li><a href = "basket.html"><img id = "bag" src = "shopping-bag.png"></a></li>
+    </ul>
+    
+    <div class="image-gallery"></div>
+
+    <div class="load-buttons" >
+        <button onclick="loadMore()">Load More</button>
+    </div>
+      
+
+    <div id="popup">
+        <p>Підпишіться на наші повідомлення:</p>
+        <button id="accept-btn">Прийняти</button>
+        <button id="reject-btn">Відхилити</button>
+      </div>
+      
+      <div class = "adv" id = "reklama">
+          <button id = "close">Close</button>
+        <p>Red Bull Energy Drink</p>
+        <img src = "redbul.png" alt = "REEEEED BUUUULL">
+
+      </div>
+
+     <script src="script.js"></script>
+    </body>
